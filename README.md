@@ -10,19 +10,25 @@ P站爬虫。
 ### 1. 填写全局变量
 下载PixivSpider.py，根据自己的情况填写第6-9行的变量。
 
-其中`cookie`与`userAgent`需要抓包分析。`xUserId`就是你的p站账号的uid。`file_root_path`是保存目录。
+其中`cookie`与`userAgent`需要抓包分析。`xUserId`就是你的p站账号的uid。`file_root_path`是下载文件的保存目录。
 
 #### Chrome浏览器抓包速通
-右击页面，选择检查->网络，勾选保留日志，过滤选项选择Fetch/XHR，然后点击一个p站链接，随便点一个捕获到的数据包检查请求标头。如果包里没有cookie数据就换个数据包看。在数据包的请求标头里找到cookie与userAgent后，右键选择复制值，粘贴到PixivSpider.py的相应变量中。
+1. 右击页面
+2. 选择检查->网络
+3. 勾选保留日志，过滤选项选择Fetch/XHR
+4. 点击一个p站链接
+5. 随便点一个捕获到的数据包检查请求标头
+6. 如果包里没有cookie数据就换个数据包看，直到找到cookie数据
+7. 在数据包的请求标头里找到cookie与userAgent后，右键选择复制值，粘贴到PixivSpider.py的相应变量中
 
 ![image](https://user-images.githubusercontent.com/108179220/197403710-d0eb522c-40be-49cd-8ca6-b238a5b0fa2d.png)
 
 #### 示例
-这是我自用的脚本中填写的变量值，注意它们都是字符串变量，注意文件保存路径中的"\"需要转义为`"\\"`。
+这是我自用的脚本中填写的变量值，注意它们都是字符串，注意文件保存路径中的反斜杠需要转义为`"\\"`。
 
 ![image](https://user-images.githubusercontent.com/108179220/197404175-01b79216-314d-451e-9e32-e9348ebe986d.png)
 
-保存路径效果：
+保存效果：
 
 ![image](https://user-images.githubusercontent.com/108179220/197404638-93e5224c-ac98-4bc8-a4dd-a0b2d4772e0b.png)
 
