@@ -3,10 +3,10 @@ import os
 from lxml import etree
 #import json
 
-cookie = ''
-userAgent = ''
-xUserId = ''
-file_root_path = ''
+cookie = 'first_visit_datetime_pc=2022-10-08+16:09:37; p_ab_id=7; p_ab_id_2=7; p_ab_d_id=1848536927; yuid_b=EghhZ3Y; device_token=930098cb4c6622771c91401f6d6389e6; privacy_policy_agreement=5; privacy_policy_notification=0; a_type=0; b_type=1; howto_recent_view_history=101419511; login_ever=yes; QSI_S_ZN_5hF4My7Ad6VNNAi=v:0:0; PHPSESSID=24479428_LadShC6cSwL0IY88AfRQBp8rdEz7xz9L; c_type=21; tag_view_ranking=0xsDLqCEW6~RTJMXD26Ak~5oPIfUbtd6~jH0uD88V6F~-98s6o2-Rp~Ie2c51_4Sp~_EOd7bsGyl~tgP8r-gOe_~GNcgbuT3T-~EZQqoW9r8g~3gc3uGrU1V~ZldurqefWy~KN7uxuR89w~WVrsHleeCL~faHcYIP1U0~K8_BEpmEzt~Lt-oEicbBr~ziiAzr_h04~BSlt10mdnm~HY55MqmzzQ~ETjPkL0e6r~9Gbahmahac~pnCQRVigpy~CrFcrMFJzz~azESOjmQSV~q303ip6Ui5~-sp-9oh8uv~4QveACRzn3~u8McsBs7WV~oAnKp9i65M~UKKcv4bu7d~gpglyfLkWs~WnZ0fT9WF-~2R7RYffVfj~hIbSsZ4_QS~wmxKAirQ_H~TqiZfKmSCg~K_T1KPLd2P~Bd2L9ZBE8q~AqnpayadBQ~QaiOjmwQnI~Xyw8zvsyR4~1WiF9FWDcG~eVxus64GZU~iFcW6hPGPU~qFKaG9wqf1~JChz6LAJsB~rOkjoRR5YT~F-lXdokC4U~Ged1jLxcdL~cryvQ5p2Tx~qXzcci65nj~otWaj1bQDp~8yfu_pZkcm~CkDjyRo6Vc~VTTTpeWl_Y~JflzRb7YrB~bvp7fCUKNH~4rDNkkAuj_~txZ9z5ByU7~r01unnQL0a~yREQ8PVGHN~rOnsP2Q5UN~TWrozby2UO~jk9IzfjZ6n~BtXd1-LPRH~mIBxNOpKNs~qQ77lqOSk3~ZnmOm5LdC3~_vCZ2RLsY2~q8MR54Ig90~ea63_dbx7n~aRnicZWkcZ~gXL18Qy_Kg~tAZXG3M0z-~KexWqtgzW1~qWFr0Atl5X~vzxes78G4k~_pwIgrV8TB~M2vKPRxAge~i_dZaon0j6~JTIckDtLBA~qGShmX0wgk~_GuOetFMMO~6GYRfMzuPl~-StjcwdYwv~PwDMGzD6xn~YThJ5b-nhQ~HOA5yVOSfn~KOnmT1ndWG~y8GNntYHsi~NpsIVvS-GF~U7REJ2l-CY~5WlN6qpDZj~51A0YAI8PU~4h2tbK2_VU~W6jo6IPFVp~9PI9msRK8Q~smD4GnkGMk~ZKYx1SDf_f; __cf_bm=UdkbLCuUiEDB91iOX94kOZg0nrBbkxfx_E55YZYlYhM-1665999833-0-ATZsT1cbcsjf53ild7QddaxiyoTGz00CBhLg/y3Gj+rOeAhg4ZzqCzvkOTQmZtrHu314PO49iyG8Z25guq2Hd6sTW5Yw8iSzxXpp2rGA8tY4blHisIkweRo0V6+X1fS1dCGCLxCLoVDkhstduLfxYROrrYAR1PPGOnVaz3GuZpIfqbNxk4ai3+L5BfPqeASH6w==; user_language=zh'
+userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36'
+xUserId = '24479428'
+file_root_path = 'E:\\pixiv\\'
 
 
 def try_get(url, headers, params):
@@ -135,7 +135,7 @@ def download_illustrator(uid, max, start_y, start_m, stop_y, stop_m):
 
     # 下载列表中的插画
     i = 0  # 已下载的文件的计数器
-    for single_pid in pid_List[0:max-1]:
+    for single_pid in pid_List[0:max]:
         response = download_pid(single_pid, file_path,
                                 start_y, start_m, stop_y, stop_m)
         if response[0]:
